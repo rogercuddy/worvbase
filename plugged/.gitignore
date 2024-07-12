@@ -1,0 +1,39 @@
+# Compiled output
+*.class
+*.o
+*.exe
+dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+.angular/
+
+# IDE
+.idea/
+.vscode/
+.vs/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Sensitive information
+.env
+secrets.txt
+private_key.pem
+
+# Temporary/backup files
+*~
+*.swp
+*.bak
+
+# Build output
+build/
+target/
