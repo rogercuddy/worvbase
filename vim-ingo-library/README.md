@@ -6,7 +6,7 @@ DESCRIPTION
 ------------------------------------------------------------------------------
 
 This library contains common autoload functions that are used by almost all of
-my plugins (http://www.vim.org/account/profile.php?user_id=9713). Instead of
+my plugins (http://www.vim.org/account/profile.php?user\_id=9713). Instead of
 duplicating the functionality, or installing potentially conflicting versions
 with each plugin, this one core dependency fosters a lean Vim runtime and
 easier plugin updates.
@@ -184,8 +184,23 @@ https://github.com/inkarkat/vim-ingo-library/issues or email (address below).
 
 HISTORY
 ------------------------------------------------------------------------------
+Note: Bump a new draft version also in autoload/ingo/version.vim
 
-##### 1.045   RELEASEME
+##### 1.047   10-Jun-2025
+- CHG: ingo#text#surroundings#ChangeEnclosedText() and
+  ingo#text#surroundings#RemoveSingleCharDelimiters() now take an
+  a:delimiterCharExpr instead of a literal a:delimiterChar.
+- ENH: ingo#plugin#persistence#CanPersist() also considers 'sessionoptions'
+  containing "global", ingo#plugin#persistence#CanPersist() indicates the
+  type(s) of persistence, ENH: ingo#plugin#persistence#CanPersist() also
+  considers 'sessionoptions' containing "global"
+
+##### 1.046   17-Jan-2025
+- ENH: Add ingo#version#Has() that allows plugins to assert a compatible
+  ingo-library version and handle missing dependency gracefully.
+- Small fixes and API enhancements to ingo#query#fromlist#Query\[AsText]().
+
+##### 1.045   03-Oct-2024
 - ingo#query#fromlist#Query(): CHG: Beep and continue querying on invalid
   accelerator key or number instead of returning -1; only &lt;Esc&gt; or Ctrl-C
   abort.
@@ -230,6 +245,7 @@ HISTORY
 - Add ingo#escape#EscapeExpr().
 - ingo#text#surroundings#SurroundWith\[SingleChar](): ENH: Support custom set
   of [back, end] motions.
+- BUG: ingo#regexp#magic#Normalize('\\V[[a-S]]') only escapes the first [
 
 ##### 1.044   08-Apr-2022
 - Add ingo#cursor#IsBeyondEndOfLine() variant of ingo#cursor#IsAtEndOfLine().
@@ -1298,7 +1314,7 @@ HISTORY
 - Started development of shared autoload functionality.
 
 ------------------------------------------------------------------------------
-Copyright: (C) 2009-2024 Ingo Karkat -
+Copyright: (C) 2009-2025 Ingo Karkat -
 Contains URL encoding / decoding algorithms written by Tim Pope. -
 The [VIM LICENSE](http://vimdoc.sourceforge.net/htmldoc/uganda.html#license) applies to this plugin.
 
